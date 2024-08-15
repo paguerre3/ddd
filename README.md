@@ -74,7 +74,7 @@ We have to build something around DM in order to implement it and there isn't on
 
 
 ---
-<b>Anemic Domain</b> implementations have Entities that looks that will implement domain logic however they don't, i.e. having just accessors probably using Lombok annotations (named entities but only Data containers or Models in MVCs) -@Data @Entity.
+<b>Anemic Domain</b> implementations have Entities that look that will implement domain logic however they don't, i.e. having just accessors probably using Lombok annotations (named entities but only Data containers or Models in MVCs) -@Data @Entity.
 
 The previous approach serves for simple project or legacy projects that doesn't grow in complexity (legacy MVCs).
 
