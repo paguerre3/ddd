@@ -72,3 +72,13 @@ We have to build something around DM in order to implement it and there isn't on
 5. <b>Domain Service</b>: is where the majority of the business logic exists, it carries out the operations to turn A into B, input into output, egg into chicken. It achieves this through interacting with the final layer -@Service, business logic and adapters of DM.
 6. <b>Domain Model</b>: is the representation of the high level data objects we use -@Entity and Value Objects.
 
+
+---
+<b>Anemic Domain</b> implementations have Entities that looks that will implement domain logic however they don't, i.e. having just accessors probably using Lombok annotations (named entities but only Data containers or Models in MVCs) -@Data @Entity.
+
+The previous approach serves for simple project or legacy projects that doesn't grow in complexity (legacy MVCs).
+
+
+---
+
+
