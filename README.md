@@ -32,4 +32,35 @@ A common java framework and technologies involved during implementation are <b>S
 - <b>Persistence</b>: @Repository, JPA, JDBC, MongoDB, ElasticSearch ...
 
 Following the DDD approach the <b>Business Logic/Domain Model</b> becomes the Center of the solution (the "king").
+
 ![Screenshot](https://github.com/paguerre3/ddd/blob/main/img/01-domain-as-king.png?raw=true)
+
+The <b>Domain Model</b> encapsulates:
+- Domain Knowledge 
+- Domain Rules
+- Processes 
+- Constraints 
+- Behaviours 
+- State Changes
+
+A <b>Tactical Design</b> includes in the <b>Domain Model</b> the following tactical patterns:
+1. Entities
+2. Value Objects
+3. Repositories
+4. Aggregations
+5. Factories
+6. Domain Services
+
+![Screenshot](https://github.com/paguerre3/ddd/blob/main/img/02-tactical-design.png?raw=true)
+
+Once developed the Domain Model, this is "pure", i.e. it will not specify infrastructure or technology needs. 
+
+DM isn't framework related so it can't be deployed as an artifact.
+
+We have to build something around DM in order to implement it and there isn't only one way of doing it, i.e. it seems like the community standard of implementing DDD is <b>Onion / Hexagonal / Clean</b> architectures which place the DM in the center.
+
+![Screenshot](https://github.com/paguerre3/ddd/blob/main/img/03-direction-of-coupling.png?raw=true)
+
+***Note*** that the interesting thing about this approach is the infrastructure layer a.k.a. persistence depends on the Application Services / Domain Model and not the other way around, i.e. <b>Direction of Coupling is centered on the Domain Model and therefore the Domain Model doesn't adapt to the infrastructure however the infrastructure is coupled to the Application Services of the Domain Model</b>   
+
+
