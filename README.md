@@ -69,6 +69,6 @@ We have to build something around DM in order to implement it and there isn't on
 2. <b>Test</b>: unit, integration and end-to-end (how we validate our business cases).
 3. <b>User Interface</b>: is how the User interacts with the code we have built (probably via a Web Application using HTTP Rest or calling another transportation mechanism of the Application Services layer).
 4. <b>Application Services</b>: The 3 initial layers are the ones that interact with our "application core", i.e. the <b>Application Services</b> layer a.k.a. the Transport Layer. Within this layer we define what our services can do through a series of contract -HTTP API, Messaging.
-5. <b>Domain Service</b>: is where the majority of the business logic exists, it carries out the operations to turn A into B, input into output, egg into chicken. It achieves this through interacting with the final layer -@Service, business logic and adapters into DM.
+5. <b>Domain Service</b>: is where the majority of the business logic exists, it carries out the operations to turn A into B, input into output, egg into chicken. It achieves this through interacting with the final layer -@Service, business logic and adapters of DM.
 6. <b>Domain Model</b>: is the representation of the high level data objects we use -@Entity and Value Objects.
 
