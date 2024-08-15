@@ -32,4 +32,4 @@ A common java framework and technologies involved during implementation are <b>S
 - <b>Persistence</b>: @Repository, JPA, JDBC, MongoDB, ElasticSearch ...
 
 Following the DDD approach the <b>Business Logic/Domain Model</b> becomes the Center of the solution (the "king").
-![Screenshot](https://github.com/paguerre3/fqoperation/blob/master/design/pckge-diagram.png?raw=true)
+![Screenshot](https://github.com/paguerre3/ddd/blob/main/img/01-domain-as-king.png?raw=true)
