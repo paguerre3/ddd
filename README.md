@@ -10,6 +10,7 @@ Instead of setting the required infrastructure (a.k.a. cloud platform, k8s, dock
 
 Martin Fowler states that <b>Domain Driven Design</b> is an architectural approach to software development that centers the developing on programming a <b>domain model</b> that has a rich <b>understanding</b> of the processes and rules of the development.
 
+
 ---
 ### Requirements for a DDD approach "in order" (old testament based on original DDD book by Eric Evans):
 1. <b>Understand the Domain</b>, i.e. study the domain, speak with stakeholders and product owners that understand processes and rules or the domain.
@@ -18,3 +19,17 @@ Martin Fowler states that <b>Domain Driven Design</b> is an architectural approa
 4. <b>Develop a Domain Model</b>, i.e. write the code that reflects the Domain using ubiquitous/common domain language
 5. <b>Separate Domain Model from Implementation Details</b>, i.e. separating the Domain from Infrastructure, frameworks and database details. ***Note*** Domain should stay pure, if written in Java it should only be expressed using Java language (no docker, k8s, db and cloud platform specifications)  
 
+
+---
+<b>Implementing DDD book by Vaughn Vernon</b> provides implementation examples following the original book made by Eric Evans mainly using Java.
+
+A common java framework and technologies involved during implementation are <b>Spring</b> and third party dependencies, i.e.:
+- <b>HTTP API</b>: Spring MVC, WebFlux
+- <b>Business Logic</b>: @Service
+- <b>Messaging</b>: Kafka, RabbitMQ, SQS ...
+- <b>HTTP Clients</b>: @HttpExchange, RestClient, OpenFeign
+- <b>Caching</b>: Redis, Caffeine
+- <b>Persistence</b>: @Repository, JPA, JDBC, MongoDB, ElasticSearch ...
+
+Following the DDD approach the <b>Business Logic/Domain Model</b> becomes the Center of the solution (the "king").
+![Screenshot](https://github.com/paguerre3/fqoperation/blob/master/design/pckge-diagram.png?raw=true)
