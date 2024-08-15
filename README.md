@@ -63,4 +63,12 @@ We have to build something around DM in order to implement it and there isn't on
 
 ***Note*** that the interesting thing about this approach is the infrastructure layer a.k.a. persistence depends on the Application Services / Domain Model and not the other way around, i.e. <b>Direction of Coupling is centered on the Domain Model and therefore the Domain Model doesn't adapt to the infrastructure however the infrastructure is coupled to the Application Services of the Domain Model</b> (meaning that if the Domain Model changes then it impacts above layers like infrastructure that will require to adapt to the changes)  
 
+[Onion architecture for implementing DDD](https://dev.to/barrymcauley/onion-architecture-3fgl) 
+
+1. <b>Infrastructure</b>: is where database, file system, or any external web service we depend on live -@Repository and adapters into persistence objects including cache.
+2. <b>Test</d>: unit, integration and end-to-end (how we validate our business cases).
+3. <b>User Interface</b>: is how the User interacts with the code we have built (probably via a Web Application using HTTP Rest or calling another transportation mechanism of the Application Services layer).
+4. <b>Application Services</b>: The 3 initial layers are the ones that interact with our "application core", i.e. the <b>Application Services</b> layer a.k.a. the Transport Layer. Within this layer we define what our services can do through a series of contract -HTTP API, Messaging.
+5. <b>Domain Service</b>: is where the majority of the business logic exists, it carries out the operations to turn A into B, input into output, egg into chicken. It achieves this through interacting with the final layer -@Service, business logic and adapters into DM.
+6. <b>Domain Model</b>: is the representation of the high level data objects we use -@Entity and Value Objects.
 
