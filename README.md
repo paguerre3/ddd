@@ -80,5 +80,36 @@ The previous approach serves for simple project or legacy projects that doesn't 
 
 
 ---
+## Domain Driven Design
 
 
+---
+### 1. Understand the Domain
+<b>DDD</b> approach requires studying the business, talk with POs, and as result, writing <b>User Stories</b> using a common language for defining the Domain, e.g. USs in case of a library application following DDD:
+
+- As a librarian I want to register a copy of a book available to lend, by scanning book ISBN and the bar code.
+- The bar code is printed in the library and pasted on each copy of the book. Each copy has its own unique bar code.
+- If the book is not yet in the catalog, it should be added there with information about the title and ISBN.
+- As a library user, I want to return a copy of a book I borrowed. If the book is returned after the return date, user must pay a fee.
+- As a library user, I want to borrow a copy of a book. I want to know up until when I can hold the book so that I don't pay a fee.
+
+***Note of Dependencies*** 
+- There is already another company implementing a service that calculates the fee for late returns.
+- To avoid manual work, we are going to use 3rd party service that returns book information based on the ISBN code, e.g.: https://openlibrary.org
+
+
+--- 
+### 2. Split the Big Domain into Sub Domains
+Break the "big" Library Domain into 2 "smaller" Sub-Domains, i.e.: 
+1. <b>Catalog</b> that the people use to Search for the Books, Browse details and see if there is availability.
+2. <b>Lending Books</b> in which teh the book is returned late then there is the need to pay a fee calculated.
+
+
+--- 
+### 3. Ubiquitous Language
+<b>Ubiquitous words</b> used to define the common language of the Domain Model are: register copy of a book, lend, ISBN, bar code, catalog, book title, return a copy of a book, return date, fee, borrow a copy of a book
+
+
+---
+### 4. Develop a Domain Model
+Implementation using <b>Spring Modulith</b> that will help creating boundaries of the smaller pieces / Sub-Domains defined, e.g. the 1st module will be the Catalog and the 2nd one will be the Lending
