@@ -66,7 +66,7 @@ We have to build something around DM in order to implement it and there isn't on
 [Onion architecture for implementing DDD](https://dev.to/barrymcauley/onion-architecture-3fgl) 
 
 1. <b>Infrastructure</b>: is where database, file system, or any external web service we depend on live -@Repository and adapters into persistence objects including cache.
-2. <b>Test</d>: unit, integration and end-to-end (how we validate our business cases).
+2. <b>Test</b>: unit, integration and end-to-end (how we validate our business cases).
 3. <b>User Interface</b>: is how the User interacts with the code we have built (probably via a Web Application using HTTP Rest or calling another transportation mechanism of the Application Services layer).
 4. <b>Application Services</b>: The 3 initial layers are the ones that interact with our "application core", i.e. the <b>Application Services</b> layer a.k.a. the Transport Layer. Within this layer we define what our services can do through a series of contract -HTTP API, Messaging.
 5. <b>Domain Service</b>: is where the majority of the business logic exists, it carries out the operations to turn A into B, input into output, egg into chicken. It achieves this through interacting with the final layer -@Service, business logic and adapters into DM.
