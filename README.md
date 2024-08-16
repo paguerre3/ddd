@@ -113,3 +113,10 @@ Break the "big" Library Domain into 2 "smaller" Sub-Domains, i.e.:
 ---
 ### 4. Develop a Domain Model
 Implementation using <b>Spring Modulith</b> that will help creating boundaries of the smaller pieces / Sub-Domains defined, e.g. the 1st module will be the Catalog and the 2nd one will be the Lending
+
+***Impl. Notes*** 
+- ISB should be treated as a Java record and therefore is immutable and it will be validated.
+- Create BookId Java record as an aggregator inside Book class that holds the logic for generating the UUID and also doing the validation of the BookId a.k.a. value container aggregator.
+- A <b>Repository</b> in the Domain doesn't act like a Data Access Object (DTO) instead is a Collection of Aggregates or Entities.
+- Some Authors say that <b>Domain Objects should be agnostic to the Underlying Persistence Layer>/b> when implementing DDD therefore in this case they suggest <b>having a JPARepository inside the Infrastructure layer responsible for doing the mapping for saving DOs to DTO Entity and vice versa when fetching DTO Entity to DOs</b>. <b>The mentioned approach is considered "pure" but a Boilerplate problem when the project grows exponentially having the need of doing multiple mappings of similar objects</b>, i.e. DOs to DTOs, DTOs to DOs.
+  ![Screenshot](https://github.com/paguerre3/ddd/blob/main/img/04-jpa-repo-inside-infra.png?raw=true)
