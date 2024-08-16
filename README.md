@@ -113,3 +113,7 @@ Break the "big" Library Domain into 2 "smaller" Sub-Domains, i.e.:
 ---
 ### 4. Develop a Domain Model
 Implementation using <b>Spring Modulith</b> that will help creating boundaries of the smaller pieces / Sub-Domains defined, e.g. the 1st module will be the Catalog and the 2nd one will be the Lending
+
+***Impl. Notes*** 
+- ISB should be treated as a record and therefore is inmutable and will be validated
+
