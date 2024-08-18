@@ -7,7 +7,7 @@ import java.util.UUID;
 public record BookId(UUID id) {
 
     /**
-     * Default "compact" constructor validations using "default record argument id".
+     * Default "compact" constructor DO validations using "default record argument id".
      * @param id UUID
      */
     public BookId {

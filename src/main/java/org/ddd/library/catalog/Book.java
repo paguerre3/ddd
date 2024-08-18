@@ -18,7 +18,11 @@ public class Book {
     @AttributeOverride(name = "value", column = @Column(name = "isbn"))
     private Isbn isbn;
 
-    public Book(String title, Isbn isbn) {
+    // only for hibernate and isn't public:
+    Book() {}
+
+    public Book(final String title, final Isbn isbn) {
+        // DO validations:
         Assert.notNull(title, "Title must not be null");
         Assert.notNull(isbn, "ISBN must not be null");
         // adding aggregations:
