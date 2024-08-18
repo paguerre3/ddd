@@ -1,7 +1,7 @@
 package org.ddd.library.catalog.infrastructure;
 
 import org.ddd.library.catalog.application.BookInformation;
-import org.ddd.library.catalog.application.SearchableBook;
+import org.ddd.library.catalog.application.BookSearchService;
 import org.ddd.library.catalog.domain.Isbn;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
@@ -11,7 +11,7 @@ import java.util.Optional;
 // must not be of "public" visibility in order to avoid results inside lower layers as application.
 // correct dependency is infra depends on application and not vise versa. this is a protection.
 @Service
-class OpenLibrarySearchBookClientService implements SearchableBook {
+class OpenLibrarySearchBookClientService implements BookSearchService {
     private final RestClient restClient;
 
     /**
