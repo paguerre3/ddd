@@ -1,4 +1,4 @@
-package org.ddd.library.catalog;
+package org.ddd.library.catalog.domain;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
@@ -16,6 +16,7 @@ public class Copy {
     @AttributeOverride(name = "id", column = @Column(name = "book_id"))
     private BookId bookId;
     @Embedded
+    @AttributeOverride(name = "code", column = @Column(name = "bar_code"))
     private BarCode barCode;
     private boolean available;
 

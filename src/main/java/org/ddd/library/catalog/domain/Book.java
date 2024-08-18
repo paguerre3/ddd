@@ -1,4 +1,4 @@
-package org.ddd.library.catalog;
+package org.ddd.library.catalog.domain;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
