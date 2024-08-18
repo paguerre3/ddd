@@ -8,8 +8,10 @@ import org.springframework.web.client.RestClient;
 
 import java.util.Optional;
 
+// must not be of "public" visibility in order to avoid results inside lower layers as application.
+// correct dependency is infra depends on application and not vise versa. this is a protection.
 @Service
-public class OpenLibrarySearchBookClientService implements SearchableBook {
+class OpenLibrarySearchBookClientService implements SearchableBook {
     private final RestClient restClient;
 
     /**
