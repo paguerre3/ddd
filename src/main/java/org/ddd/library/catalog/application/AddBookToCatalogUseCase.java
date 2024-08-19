@@ -1,5 +1,6 @@
 package org.ddd.library.catalog.application;
 
+import jakarta.validation.constraints.NotNull;
 import org.ddd.library.UseCase;
 import org.ddd.library.catalog.domain.Book;
 import org.ddd.library.catalog.domain.BookRepository;
@@ -16,7 +17,7 @@ public class AddBookToCatalogUseCase {
         this.bookRepository = bookRepository;
     }
 
-    public void execute(Isbn isbn) {
+    public void execute(@NotNull Isbn isbn) {
         BookInformation bookInfo = this.searchService.search(isbn);
         this.bookRepository.save(new Book(bookInfo.title(), isbn));
     }
