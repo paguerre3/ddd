@@ -13,6 +13,7 @@ class LibraryApplicationTests {
 
 	@Test
 	void verifyModules() {
+		// avoid coupling among modules:
 		ApplicationModules.of(LibraryApplication.class).verify();
 	}
 }
