@@ -134,5 +134,10 @@ Implementation using <b>Spring Modulith</b> that will help creating boundaries o
 <b>Key Features</b>: 
 <b>a) Domain Event Management</b>: <code>AbstractAggregateRoot</code> simplifies the publishing of domain events through an internal event mechanism, i.e. you can register an event within the aggregate by calling <code>registerEvent(Object event)</code> and then publish all registered events at the appropriate time using <code>DomainEventPublisher</code>.
 <b>b)Transparent Persistence</b>: Registered events are typically published when the aggregate is saved (persisted) using a Spring Data repository, i.e. Spring Data detects the inheritance from <code>AbstractAggregateRoot</code> and handles the automatic publication of the registered events.
-<b>c) Cleaner Code</b>: By extending <code>AbstractAggregateRoot</b>, you reduce the boilerplate code needed to handle events within an aggregate, promoting a clear separation between domain logic and infrastructure details related to event publication.
+<b>c) Cleaner Code</b>: By extending <code>AbstractAggregateRoot</code>, you reduce the boilerplate code needed to handle events within an aggregate, promoting a clear separation between domain logic and infrastructure details related to event publication.
 - ⚠️ <b>Domain Event Listener</b>: <code>DomainEventListener</code> located inside catalog module that listen to Events registered by <code>Loan</code> Root Aggregate when Creating OR Returning/Closing Loans so when the events occur the Copies can be "marked as available OR unavailable" for doing lendings. This way the code inside Catalog is much more neat than making the verification in the <code>RentBookUseCase</code> in order to ensure rented copy is not rented again as the mentioned Use Case belongs to the Lending module and the verification of the Available copy belongs to the Catalog module (this way these modules are loosely coupled).
+
+---
+### Requirement
+Set up postgres using Docker Compose:
+<code>docker-compose -f postgres.yml up -d</code>
