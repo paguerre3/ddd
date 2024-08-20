@@ -1,4 +1,6 @@
 package org.ddd.library.lending.domain;
 
-public record LoanCreated(CopyId copyId) {
+import org.jmolecules.event.types.DomainEvent;
+
+public record LoanCreated(CopyId copyId) implements DomainEvent {
 }

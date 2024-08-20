@@ -13,7 +13,9 @@ class LibraryApplicationTests {
 
 	@Test
 	void verifyModules() {
-		// avoid coupling among modules:
-		ApplicationModules.of(LibraryApplication.class).verify();
+		var modules = ApplicationModules.of(LibraryApplication.class);
+		System.out.println(modules);
+		// avoid DDD violations among Modules:
+		modules.verify();
 	}
 }
