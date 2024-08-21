@@ -141,3 +141,8 @@ Implementation using <b>Spring Modulith</b> that will help creating boundaries o
 ### Requirement
 Set up postgres using Docker Compose:
 <code>docker-compose -f postgres.yml up -d</code>
+
+---
+### Health
+Modulith: <code>http://{localhost or published address}:8080/actuator/modulith</code>
+Service: <code>http://{localhost or published address}:8080/actuator/modulith</code>
