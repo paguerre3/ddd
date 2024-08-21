@@ -1,11 +1,16 @@
 package org.ddd.library;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.modulith.core.ApplicationModules;
 
+import java.util.Optional;
+
 @SpringBootTest
 class LibraryApplicationTests {
+	private static final Logger LOGGER = LoggerFactory.getLogger(LibraryApplicationTests.class);
 
 	@Test
 	void contextLoads() {
@@ -13,10 +18,11 @@ class LibraryApplicationTests {
 
 	@Test
 	void verifyModules() {
+		LOGGER.info("###Modulith verification###");
 		var modules = ApplicationModules.of(LibraryApplication.class);
-		System.out.println(modules);
+		LOGGER.info(modules.toString());
 		// avoid DDD violations among Modules:
 		modules.verify();
-		System.out.println("###Modulith verification PASSED###");
+		LOGGER.info("###Modulith verification PASSED###");
 	}
 }
