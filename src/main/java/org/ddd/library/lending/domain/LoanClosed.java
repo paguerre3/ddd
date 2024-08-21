@@ -1,8 +1,7 @@
 package org.ddd.library.lending.domain;
 
-import org.jmolecules.event.annotation.Externalized;
-import org.jmolecules.event.types.DomainEvent;
+import org.springframework.modulith.NamedInterface;
 
-@Externalized("loans.LoanClosed")
-public record LoanClosed(CopyId copyId) implements DomainEvent {
+@NamedInterface
+public record LoanClosed(CopyId copyId) {
 }

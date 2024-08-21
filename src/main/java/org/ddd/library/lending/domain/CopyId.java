@@ -1,9 +1,11 @@
 package org.ddd.library.lending.domain;
 
+import org.springframework.modulith.NamedInterface;
 import org.springframework.util.Assert;
 
 import java.util.UUID;
 
+@NamedInterface
 public record CopyId(UUID id) {
     // Default "compact" constructor validations using "default record argument id".
     public CopyId {

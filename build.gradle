@@ -25,22 +25,22 @@ repositories {
 
 ext {
 	set('springModulithVersion', "1.2.1")
-	set('jmoleculesVersion', "2023.1.4")
+	//set('jmoleculesVersion', "2023.1.4")
 }
 
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.modulith:spring-modulith-bom:${springModulithVersion}"
-		mavenBom "org.jmolecules:jmolecules-bom:${jmoleculesVersion}"
+		//mavenBom "org.jmolecules:jmolecules-bom:${jmoleculesVersion}"
 	}
 }
 
 dependencies {
-	implementation 'org.jmolecules.integrations:jmolecules-starter-ddd'
-	implementation 'org.jmolecules:jmolecules-events'
-	runtimeOnly 'org.jmolecules.integrations:jmolecules-jpa'
-	compileOnly 'org.jmolecules.integrations:jmolecules-bytebuddy-nodep'
-	annotationProcessor 'org.jmolecules.integrations:jmolecules-apt'
+	//implementation 'org.jmolecules.integrations:jmolecules-starter-ddd'
+	//implementation 'org.jmolecules:jmolecules-events'
+	//runtimeOnly 'org.jmolecules.integrations:jmolecules-jpa'
+	//compileOnly 'org.jmolecules.integrations:jmolecules-bytebuddy-nodep'
+	//annotationProcessor 'org.jmolecules.integrations:jmolecules-apt'
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
