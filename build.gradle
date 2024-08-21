@@ -25,36 +25,47 @@ repositories {
 
 ext {
 	set('springModulithVersion', "1.2.1")
-}
-
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-	implementation 'org.springframework.modulith:spring-modulith-starter-core'
-	implementation 'org.springframework.modulith:spring-modulith-starter-jpa'
-
-	runtimeOnly 'org.postgresql:postgresql'
-	implementation 'commons-validator:commons-validator:1.8.0'
-	implementation 'org.javamoney:moneta:1.4.4'
-	implementation 'io.hypersistence:hypersistence-utils-hibernate-63:3.7.5'
-
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.testcontainers:postgresql'
-	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-	testImplementation 'org.springframework.modulith:spring-modulith-starter-test'
-	testImplementation 'org.testcontainers:junit-jupiter'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	set('jmoleculesVersion', "2023.1.4")
 }
 
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.modulith:spring-modulith-bom:${springModulithVersion}"
+		mavenBom "org.jmolecules:jmolecules-bom:${jmoleculesVersion}"
 	}
+}
+
+dependencies {
+	implementation 'org.jmolecules.integrations:jmolecules-starter-ddd'
+	implementation 'org.jmolecules:jmolecules-events'
+	runtimeOnly 'org.jmolecules.integrations:jmolecules-jpa'
+	compileOnly 'org.jmolecules.integrations:jmolecules-bytebuddy-nodep'
+	annotationProcessor 'org.jmolecules.integrations:jmolecules-apt'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	//annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+
+	implementation 'org.springframework.modulith:spring-modulith-starter-core'
+	implementation 'org.springframework.modulith:spring-modulith-starter-jpa'
+	testImplementation 'org.springframework.modulith:spring-modulith-starter-test'
+
+	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'io.hypersistence:hypersistence-utils-hibernate-63:3.7.5'
+	testImplementation 'org.testcontainers:postgresql'
+
+	implementation 'commons-validator:commons-validator:1.8.0'
+
+	implementation 'org.javamoney:moneta:1.4.4'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.testcontainers:junit-jupiter'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {

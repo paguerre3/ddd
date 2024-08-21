@@ -50,7 +50,7 @@ public class Loan extends AbstractAggregateRoot<Loan> {
         this.fee = BigDecimal.ZERO;
         // register business domain event for listener in order to simplify
         // and avoid code dependencies when it's required:
-        this.registerEvent(new LoanCreated(this.copyId));
+        registerEvent(new LoanCreated(this.copyId));
     }
 
     public void returnAkaClose(){
@@ -64,6 +64,6 @@ public class Loan extends AbstractAggregateRoot<Loan> {
         }
         // register business domain event for listener in order to simplify
         // and avoid code dependencies when it's required:
-        this.registerEvent(new LoanClosed(this.copyId));
+        registerEvent(new LoanClosed(this.copyId));
     }
 }
