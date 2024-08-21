@@ -144,5 +144,5 @@ Set up postgres using Docker Compose:
 
 ---
 ### Health
-Modulith: <code>http://{localhost or published address}:8080/actuator/modulith</code>
-Service: <code>http://{localhost or published address}:8080/actuator/modulith</code>
+- Modulith: <code>http://{localhost or published address}:8080/actuator/modulith</code>
+- Service: <code>http://{localhost or published address}:8080/actuator/modulith</code>
