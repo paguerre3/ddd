@@ -17,5 +17,6 @@ class LibraryApplicationTests {
 		System.out.println(modules);
 		// avoid DDD violations among Modules:
 		modules.verify();
+		System.out.println("###Modulith verification PASSED###");
 	}
 }
