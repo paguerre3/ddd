@@ -25,6 +25,7 @@ replay_pid*
 
 # general Spring
 HELP.md
+.settings
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
