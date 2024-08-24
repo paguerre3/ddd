@@ -151,3 +151,4 @@ Set up postgres using Docker Compose:
 ---
 ### More about DDD approach
 - [DDD, Onion, Hexagonal, Clean, CQRS, Reactive DDD](https://github.com/paguerre3/ddd-structure-demo)
+- [Deep Dive into Monolith with Modulith](https://github.com/paguerre3/ddd-monolith)
